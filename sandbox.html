@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tweet Length Chart</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+
+<body>
+  <div id="chartHeader">
+    <div id="chartTitle">
+      How tweet lengths correlate with engagement rates
+    </div>
+    <div id="chartControls">
+      <label>Choose a brand: </label>
+      <select id="chartMenu">
+        <option selected>All</option>
+        <option>XFINITY</option>
+        <option>sprint</option>
+        <option>Toyota</option>
+      </select>
+    </div>
+  </div>
+  <div id="canvasContainer">
+    <canvas id="canvas_main" width="600px" height="600px"></canvas>
+    <div id="tweetInfo_canvas_main" class="tweetInfo">
+      <div id="tweet_brand_canvas_main" class="tweet_brand"></div>
+      <div id="tweet_text_canvas_main" class="tweet_text"></div>
+      <div id="tweet_chars_canvas_main" class="tweet_chars"></div>
+      <div id="tweet_rts_canvas_main" class="tweet_rts"></div>
+      <div id="tweet_favs_canvas_main" class="tweet_favs"></div>
+    </div>
+  </div>
+
+  <script src="./js/bundle.js"></script>
+</body>
+
+</html>

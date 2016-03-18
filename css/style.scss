@@ -1,0 +1,76 @@
+#canvasContainer, #multiCharts {
+  padding: 5px;
+}
+
+#chartHeader {
+  padding: 5px;
+  width: 600px;
+  font-weight: bold;
+  font-size: 35px;
+  font-variant: small-caps;
+
+  @media (min-width: 500px) and (max-width: 799px) {
+    width: 450px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 499px) {
+    width: 300px;
+    font-size: 30px;
+  }
+}
+
+#chartControls {
+  font-size: 25px;
+  font-variant: normal;
+  font-weight: normal;
+  margin: 0 auto;
+}
+
+#canvas_main, .brand_canvas {
+  -webkit-display: inline;
+  -moz-display: inline;
+  -ms-display: inline;
+  -o-display: inline;
+  display: inline;
+  -webkit-border: 1px solid black;
+  -moz-border: 1px solid black;
+  -ms-border: 1px solid black;
+  -o-border: 1px solid black;
+  border: 1px solid black;
+  font-size: 30px;
+
+  @media (min-width: 500px) and (max-width: 799px) {
+    width: 450px;
+    height: 450px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 499px) {
+    width: 300px;
+    height: 300px;
+    font-size: 30px;
+  }
+}
+
+.tweetInfo {
+  visibility: hidden;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.tweet_brand {
+	font-weight: bold;
+}
+
+.tweet_text {
+	max-width: 590px;
+
+  @media (min-width: 500px) and (max-width: 799px) {
+    max-width: 440px;
+  }
+
+  @media (max-width: 499px) {
+    max-width: 290px;
+  }
+}
