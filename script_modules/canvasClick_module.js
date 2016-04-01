@@ -14,11 +14,11 @@ function identifyDot(clickX, clickY, canvas, tweet_dots) {
 
 function showInfo(tweet, canvas) {
   document.getElementById('tweetInfo_' + canvas.name_val).style.visibility = "visible";
-  document.getElementById('tweet_brand_' + canvas.name_val).textContent = tweet.brand;
-  document.getElementById('tweet_text_' + canvas.name_val).textContent = tweet.text;
-  document.getElementById('tweet_chars_' + canvas.name_val).textContent = tweet.characters + ' characters';
-  document.getElementById('tweet_rts_' + canvas.name_val).textContent = tweet.retweets + ' retweets';
-  document.getElementById('tweet_favs_' + canvas.name_val).textContent = tweet.favorites + ' favorites';
+  if (tweet.tweets>1) {
+    document.getElementById('tweetInfo_' + canvas.name_val).textContent = canvas.category + ': The examined accounts sent ' + tweet.tweets + ' tweets that were ' + tweet.characters + ' characters long. On average, those tweets received ' + tweet.engagements + ' retweets.';
+  } else {
+    document.getElementById('tweetInfo_' + canvas.name_val).textContent = canvas.category + ': The examined accounts sent ' + tweet.tweets + ' tweet that was ' + tweet.characters + ' characters long. That single tweet received ' + tweet.engagements + ' retweets.';
+  }
 }
 
 module.exports = identifyDot;

@@ -21,7 +21,7 @@ function layoutCanvas(canvas) {
   context.translate(canvas.x_left, canvas.y_bottom);
   context.rotate(-Math.PI / 2);
   context.textBaseline = 'bottom';
-  context.fillText('RETWEETS + FAVORITES', 0, 0);
+  context.fillText('NUMBER OF TWEETS', 0, 0);
   context.restore();
 }
 

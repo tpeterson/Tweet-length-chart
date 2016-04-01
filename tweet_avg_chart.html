@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tweet Length Chart</title>
+</head>
+
+<body>
+  <div id="chartHeader">
+    <div id="chartTitle">
+      Are longer tweets better tweets?
+    </div>
+    <div id="chartExplainer">
+      <p>Click on the dots to see how many tweets were sent at each character length and how popular tweets of that length typically are. The color of each dot corresponds with the average number of retweets that tweets sent at that length received: the darker the dot, the more retweets received.</p>
+    </div>
+    <div id="chartControls">
+      <label>Choose a category: </label>
+      <select id="chartMenu">
+        <option selected>All</option>
+        <option>Brand</option>
+        <option>Celeb</option>
+        <option>Media</option>
+      </select>
+    </div>
+  </div>
+  <div id="canvasContainer">
+    <div id="tweetInfo_canvas_main" class="tweetInfo">
+    </div>
+    <canvas id="canvas_main" width="600px" height="600px"></canvas>
+  </div>
+  <link rel="stylesheet" type="text/css" href="./tweet_avg_chart_style.css" />
+  <script src="./tweet_avg_chart_bundle.js"></script>
+</body>
+
+</html>
