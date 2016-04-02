@@ -1,17 +1,16 @@
 (function() {
-  var all_tweets = require('../script_modules/avg_all_tweets_module');
-  var brand_tweets = require('../script_modules/avg_brand_tweets_module');
-  var celeb_tweets = require('../script_modules/avg_celeb_tweets_module');
-  var media_tweets = require('../script_modules/avg_media_tweets_module');
-  var CanvasObj = require('../script_modules/canvasObj_module');
-  var layoutCanvas = require('../script_modules/layoutCanvas_module');
-  var chartTweets = require('../script_modules/plotCanvas_module');
-  var identifyDot = require('../script_modules/canvasClick_module');
-  var clearCanvas = require('../script_modules/clearCanvas_module');
+  var all_tweets = require('./script_modules/avg_all_tweets_module');
+  var brand_tweets = require('./script_modules/avg_brand_tweets_module');
+  var celeb_tweets = require('./script_modules/avg_celeb_tweets_module');
+  var media_tweets = require('./script_modules/avg_media_tweets_module');
+  var CanvasObj = require('./script_modules/canvasObj_module');
+  var layoutCanvas = require('./script_modules/layoutCanvas_module');
+  var chartTweets = require('./script_modules/plotCanvas_module');
+  var identifyDot = require('./script_modules/canvasClick_module');
+  var clearCanvas = require('./script_modules/clearCanvas_module');
 
   function createCanvas(canvas_name, tweet_data, which_chart) {
     var canvas = new CanvasObj(canvas_name, which_chart);
-
     layoutCanvas(canvas);
 
     var tweet_dots = chartTweets(canvas, tweet_data);
@@ -23,6 +22,7 @@
       identifyDot(clickX, clickY, canvas, tweet_dots);
     }
     canvas.elem.addEventListener('click', canvasClick);
+    canvas.elem.addEventListener('touchend', canvasClick);
   }
 
   createCanvas('canvas_main', all_tweets, 'All');

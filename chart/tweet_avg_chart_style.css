@@ -1,0 +1,61 @@
+#canvasContainer {
+  padding: 5px; }
+
+#chartHeader {
+  padding: 5px;
+  width: 600px;
+  font-weight: bold;
+  font-size: 35px;
+  font-variant: small-caps;
+  font-family: sans-serif; }
+  @media (min-width: 500px) and (max-width: 799px) {
+    #chartHeader {
+      width: 450px;
+      font-size: 20px; } }
+  @media (max-width: 499px) {
+    #chartHeader {
+      width: 300px;
+      font-size: 30px; } }
+
+#chartExplainer {
+  font-weight: 100;
+  font-size: 0.5em;
+  font-variant: normal; }
+
+#chartControls {
+  font-size: 0.75em;
+  font-variant: normal;
+  font-weight: normal;
+  margin: 0 auto; }
+
+#canvas_main {
+  -webkit-display: inline;
+  -moz-display: inline;
+  -ms-display: inline;
+  -o-display: inline;
+  display: inline;
+  font-size: 30px; }
+  @media (min-width: 500px) and (max-width: 799px) {
+    #canvas_main {
+      width: 450px;
+      height: 450px;
+      font-size: 20px; } }
+  @media (max-width: 499px) {
+    #canvas_main {
+      width: 300px;
+      height: 300px;
+      font-size: 30px; } }
+
+.tweetInfo {
+  visibility: hidden;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  max-width: 590px;
+  font-family: sans-serif;
+  font-weight: 100; }
+  @media (min-width: 500px) and (max-width: 799px) {
+    .tweetInfo {
+      max-width: 440px; } }
+  @media (max-width: 499px) {
+    .tweetInfo {
+      max-width: 290px; } }

@@ -1,0 +1,24 @@
+{
+  "name": "tweet_length_chart",
+  "version": "1.0.0",
+  "description": "Chart drawn in HTML5 Canvas plotting tweet data.",
+  "main": "tweet_avg_chart_bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpeterson/Tweet-length-chart.git"
+  },
+  "author": "Tim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tpeterson/Tweet-length-chart/issues"
+  },
+  "homepage": "https://github.com/tpeterson/Tweet-length-chart#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "webpack-stream": "^3.1.0"
+  }
+}
