@@ -23,6 +23,19 @@ function layoutCanvas(canvas) {
   context.textBaseline = 'bottom';
   context.fillText('NUMBER OF TWEETS', 0, 0);
   context.restore();
+
+  // DRAW X AXIS LEGEND
+  context.font = '0.5em sans-serif';
+  context.fillStyle = 'black';
+  context.textBaseline = 'middle';
+  context.fillText(140, canvas.x_right + 5, canvas.y_bottom);
+
+  // DRAW Y AXIS LEGEND
+  context.font = '0.5em sans-serif';
+  context.fillStyle = 'black';
+  context.textAlign = 'center';
+  context.textBaseline = 'bottom';
+  context.fillText(canvas.max_num_tweets, canvas.x_left, canvas.y_top - 5);
 }
 
 module.exports = layoutCanvas;

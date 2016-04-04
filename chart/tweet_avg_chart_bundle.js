@@ -2946,6 +2946,28 @@
 /***/ function(module, exports) {
 
 	function CanvasObj(canvas, which_chart) {
+	  var max_num_tweets = ''; // number of tweets
+	  if (which_chart === 'Brand') {
+	    max_num_tweets = 10;
+	  } else if (which_chart === 'Celeb') {
+	    max_num_tweets = 83;
+	  } else if (which_chart === 'Media') {
+	    max_num_tweets = 98;
+	  } else {
+	    max_num_tweets = 112;
+	  }
+
+	  var max_num_rts = ''; // number of retweets
+	  if (which_chart === 'Brand') {
+	    max_num_rts = 3976;
+	  } else if (which_chart === 'Celeb') {
+	    max_num_rts = 17117;
+	  } else if (which_chart === 'Media') {
+	    max_num_rts = 259;
+	  } else {
+	    max_num_rts = 17117;
+	  }
+
 	  this.elem = document.getElementById(canvas);
 	  this.width_val = document.getElementById(canvas).offsetWidth;
 	  this.height_val = document.getElementById(canvas).offsetHeight;
@@ -2955,6 +2977,8 @@
 	  this.y_bottom = 550;
 	  this.name_val =  canvas;
 	  this.category = which_chart;
+	  this.max_num_tweets = max_num_tweets;
+	  this.maxnum_rts = max_num_rts;
 	}
 
 	module.exports = CanvasObj;
@@ -2989,6 +3013,19 @@
 	  context.textBaseline = 'bottom';
 	  context.fillText('NUMBER OF TWEETS', 0, 0);
 	  context.restore();
+
+	  // DRAW X AXIS LEGEND
+	  context.font = '0.5em sans-serif';
+	  context.fillStyle = 'black';
+	  context.textBaseline = 'middle';
+	  context.fillText(140, canvas.x_right + 5, canvas.y_bottom);
+
+	  // DRAW Y AXIS LEGEND
+	  context.font = '0.5em sans-serif';
+	  context.fillStyle = 'black';
+	  context.textAlign = 'center';
+	  context.textBaseline = 'bottom';
+	  context.fillText(canvas.max_num_tweets, canvas.x_left, canvas.y_top - 5);
 	}
 
 	module.exports = layoutCanvas;
@@ -3000,7 +3037,7 @@
 
 	function Dot(canvas, point) {
 	  this.x = (point.characters * 3.2) + canvas.x_left;
-	  this.y = (500 - (calcY(point.tweets, canvas.category))) + canvas.y_top;
+	  this.y = (500 - (point.tweets*(500/canvas.max_num_tweets))) + canvas.y_top;
 	  this.radius = point.tweets>0 ? 7.5 * (600 / canvas.width_val) : 0;
 	  this.color = calcColor(point.engagements, canvas.category);
 	  this.characters = point.characters;
@@ -3027,35 +3064,15 @@
 	  return tweet_dots;
 	}
 
-	function calcY(point_tweets, scale) {
-	  if (scale === 'Brand') {
-	    return (point_tweets*50); // BY NUMBER OF TWEETS
-	    // return (point_tweets*0.12575); // BY NUMBER OF RETWEETS
-	  } else if (scale === 'Celeb') {
-	    return (point_tweets*6.024);
-	    // return (point_tweets*0.0292);
-	  } else if (scale === 'Media') {
-	    return (point_tweets*5.102);
-	    // return (point_tweets*1.9305);
-	  } else {
-	    return (point_tweets*2.89);
-	    // return (point_tweets*0.0292);
-	  }
-	}
-
 	function calcColor(point_engagements, category) {
 	  if (category === 'Brand') {
-	    return 'rgba(239,4,4,' + (point_engagements/3976) + ')'; // BY NUMBER OF TWEETS
-	    // return 'rgba(239,4,4,' + (point_engagements/10) + ')'; // BY NUMBER OF RETWEETS
+	    return 'rgba(239,4,4,' + (point_engagements/3976) + ')'; // BY NUMBER OF RETWEETS
 	  } else if (category === 'Celeb') {
 	    return 'rgba(239,4,4,' + (point_engagements/17117) + ')';
-	    // return 'rgba(239,4,4,' + (point_engagements/83) + ')';
 	  } else if (category === 'Media') {
 	    return 'rgba(239,4,4,' + (point_engagements/259) + ')';
-	    // return 'rgba(239,4,4,' + (point_engagements/98) + ')';
 	  } else {
 	    return 'rgba(239,4,4,' + (point_engagements/17117) + ')';
-	    // return 'rgba(239,4,4,' + (point_engagements/173) + ')';
 	  }
 	}
 
