@@ -1,21 +1,30 @@
 #canvasContainer {
-  padding: 5px; }
+  padding-left: 50px;
+  margin: 0 auto; }
+  @media (min-width: 500px) and (max-width: 599px) {
+    #canvasContainer {
+      padding: 5px; } }
+  @media (max-width: 499px) {
+    #canvasContainer {
+      padding: 5px; } }
 
 #chartHeader {
-  padding: 5px;
-  width: 600px;
+  padding-left: 50px;
+  max-width: 600px;
   font-weight: bold;
   font-size: 35px;
   font-variant: small-caps;
   font-family: sans-serif; }
-  @media (min-width: 500px) and (max-width: 799px) {
+  @media (min-width: 500px) and (max-width: 599px) {
     #chartHeader {
       width: 450px;
-      font-size: 20px; } }
+      font-size: 20px;
+      padding: 5px; } }
   @media (max-width: 499px) {
     #chartHeader {
       width: 300px;
-      font-size: 30px; } }
+      font-size: 30px;
+      padding: 5px; } }
 
 #chartExplainer {
   font-weight: 100;
