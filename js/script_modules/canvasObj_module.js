@@ -1,24 +1,24 @@
 function CanvasObj(canvas, which_chart) {
   var max_num_tweets = ''; // number of tweets
   if (which_chart === 'Brand') {
-    max_num_tweets = 10;
+    max_num_tweets = 68;
   } else if (which_chart === 'Celeb') {
-    max_num_tweets = 83;
+    max_num_tweets = 347;
   } else if (which_chart === 'Media') {
-    max_num_tweets = 98;
+    max_num_tweets = 477;
   } else {
-    max_num_tweets = 112;
+    max_num_tweets = 892;
   }
 
   var max_num_rts = ''; // number of retweets
   if (which_chart === 'Brand') {
-    max_num_rts = 3976;
+    max_num_rts = 265;
   } else if (which_chart === 'Celeb') {
-    max_num_rts = 17117;
+    max_num_rts = 6663;
   } else if (which_chart === 'Media') {
-    max_num_rts = 259;
+    max_num_rts = 95;
   } else {
-    max_num_rts = 17117;
+    max_num_rts = 6349;
   }
 
   this.elem = document.getElementById(canvas);
@@ -31,7 +31,7 @@ function CanvasObj(canvas, which_chart) {
   this.name_val =  canvas;
   this.category = which_chart;
   this.max_num_tweets = max_num_tweets;
-  this.maxnum_rts = max_num_rts;
+  this.max_num_rts = max_num_rts;
 }
 
 module.exports = CanvasObj;

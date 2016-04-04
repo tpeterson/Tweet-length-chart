@@ -1,8 +1,9 @@
 (function() {
-  var all_tweets = require('./script_modules/avg_all_tweets_module');
-  var brand_tweets = require('./script_modules/avg_brand_tweets_module');
-  var celeb_tweets = require('./script_modules/avg_celeb_tweets_module');
-  var media_tweets = require('./script_modules/avg_media_tweets_module');
+  var all_tweets = require('./script_modules/char_cats/all_tweets_module');
+  var brand_tweets = require('./script_modules/char_cats/brand_tweets_module');
+  var celeb_tweets = require('./script_modules/char_cats/celeb_tweets_module');
+  var media_tweets = require('./script_modules/char_cats/media_tweets_module');
+
   var CanvasObj = require('./script_modules/canvasObj_module');
   var layoutCanvas = require('./script_modules/layoutCanvas_module');
   var chartTweets = require('./script_modules/plotCanvas_module');
@@ -22,7 +23,7 @@
       identifyDot(clickX, clickY, canvas, tweet_dots);
     }
     canvas.elem.addEventListener('click', canvasClick);
-    canvas.elem.addEventListener('touchend', canvasClick);
+    canvas.elem.addEventListener('touchstart', canvasClick);
   }
 
   createCanvas('canvas_main', all_tweets, 'All');

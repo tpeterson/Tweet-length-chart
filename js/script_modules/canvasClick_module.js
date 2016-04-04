@@ -15,9 +15,9 @@ function identifyDot(clickX, clickY, canvas, tweet_dots) {
 function showInfo(tweet, canvas) {
   document.getElementById('tweetInfo_' + canvas.name_val).style.visibility = "visible";
   if (tweet.tweets>1) {
-    document.getElementById('tweetInfo_' + canvas.name_val).textContent = canvas.category + ': The examined accounts sent ' + tweet.tweets + ' tweets that were ' + tweet.characters + ' characters long. On average, those tweets received ' + tweet.engagements + ' retweets.';
+    document.getElementById('tweetInfo_' + canvas.name_val).textContent = canvas.category + ': The examined accounts sent ' + tweet.tweets + ' tweets that were between ' + tweet.min_characters + ' and ' + tweet.characters + ' characters long. On average, those tweets received ' + tweet.engagements + ' retweets.';
   } else {
-    document.getElementById('tweetInfo_' + canvas.name_val).textContent = canvas.category + ': The examined accounts sent ' + tweet.tweets + ' tweet that was ' + tweet.characters + ' characters long. That single tweet received ' + tweet.engagements + ' retweets.';
+    document.getElementById('tweetInfo_' + canvas.name_val).textContent = canvas.category + ': The examined accounts sent ' + tweet.tweets + ' tweet that was between ' + tweet.min_characters + ' and ' + tweet.characters + ' characters long. That single tweet received ' + tweet.engagements + ' retweets.';
   }
 }
 

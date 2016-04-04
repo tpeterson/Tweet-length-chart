@@ -25,13 +25,13 @@ function layoutCanvas(canvas) {
   context.restore();
 
   // DRAW X AXIS LEGEND
-  context.font = '0.5em sans-serif';
+  context.font = '0.75em sans-serif';
   context.fillStyle = 'black';
   context.textBaseline = 'middle';
   context.fillText(140, canvas.x_right + 5, canvas.y_bottom);
 
   // DRAW Y AXIS LEGEND
-  context.font = '0.5em sans-serif';
+  context.font = '0.75em sans-serif';
   context.fillStyle = 'black';
   context.textAlign = 'center';
   context.textBaseline = 'bottom';
