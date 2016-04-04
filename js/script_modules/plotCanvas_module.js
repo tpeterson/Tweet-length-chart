@@ -7,6 +7,10 @@ function Dot(canvas, point) {
   this.min_characters =  point.min_characters;
   this.engagements = point.engagements;
   this.tweets = point.tweets;
+  this.hashtags = point.hashtags;
+  this.mentions = point.mentions;
+  this.urls = point.urls;
+  this.media = point.media;
 }
 
 function drawTweet(canvas, tweet) {
