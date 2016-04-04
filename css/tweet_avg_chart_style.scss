@@ -13,7 +13,9 @@
 
 #chartHeader {
   padding-left: 50px;
-  max-width: 600px;
+  padding-right: 50px;
+  padding-bottom: 5px;
+  //max-width: 600px;
   font-weight: bold;
   font-size: 35px;
   font-variant: small-caps;
@@ -51,9 +53,11 @@
   -ms-display: inline;
   -o-display: inline;
   display: inline;
-  font-size: 30px;
+  font-size: 35px;
+  width: 500px;
+  height: 500px;
 
-  @media (min-width: 500px) and (max-width: 799px) {
+  @media (min-width: 500px) and (max-width: 599px) {
     width: 450px;
     height: 450px;
     font-size: 20px;
@@ -66,19 +70,22 @@
   }
 }
 
-.tweetInfo {
+#tweetInfo_canvas_main {
   visibility: hidden;
   margin-top: 10px;
   padding-bottom: 10px;
-  max-width: 590px;
+  padding-right: 50px;
+  //max-width: 590px;
   font-family: sans-serif;
   font-weight: 100;
 
-  @media (min-width: 500px) and (max-width: 799px) {
+  @media (min-width: 500px) and (max-width: 599px) {
     max-width: 440px;
+    padding-right: 5px;
   }
 
   @media (max-width: 499px) {
     max-width: 290px;
+    padding-right: 5px;
   }
 }
